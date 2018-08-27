@@ -5,6 +5,7 @@
     "browser": true
   },
   "globals": {
+    "h5a": true,
     "router": true
   },
   "settings": {

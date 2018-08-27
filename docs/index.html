@@ -7,14 +7,28 @@
   <title>h5-analytics</title>
 
   <!-- h5a-tracking -->
+  <script src="/js/analytics-core.js"></script>
   <script>
+  /* h5a-tracking 0.1.0  */
   !function(e,t,n,a,c,s,i){e.H5AnalyticsObject=c,e[c]=e[c]||function(){
   e[c].q.push([].slice.call(arguments))},e[c].q=e[c].q||[],e[c].l=1*new Date,s=t.createElement(n),
-  i=t.getElementsByTagName(n)[0],s.async=1,s.src=a,i.parentNode.insertBefore(s,i)
+  i=t.getElementsByTagName(n)[0],s.async=1,s.src=a,i.parentNode.insertBefore(s,i);
   }(window,document,"script","/js/analytics.js","h5a");
   </script>
 </head>
 <body>
   <h1>h5-analytics</h1>
+  <script>
+    h5a('init', 'Google Analytics', {
+      trackingId: 'UA-7072136-11',
+    });
+
+    h5a('init', 'Latte Bank Stats', {
+      gif: '/img/h5a-collect-gif.gif',
+    });
+
+    h5a('send', 'page');
+  </script>
+  <script src="/static/js/index.js"></script>
 </body>
 </html>
