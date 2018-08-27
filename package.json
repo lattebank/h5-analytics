@@ -1,0 +1,42 @@
+{
+  "name": "h5-analytics",
+  "version": "0.4.0",
+  "description": "enhanced analytics.js",
+  "author": "徐帅哲<xushuaizhe@lattebank.com>",
+  "main": "dist/analytics.next.js",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack-dev-server --config build/webpack.config.js",
+    "build": "gulp tracking && gulp adapter && gulp build && gulp build-debug"
+  },
+  "dependencies": {
+    "@lattebank/analytics.js-core": "3.0.0-1"
+  },
+  "devDependencies": {
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "6.4.1",
+    "babel-plugin-import": "1.4.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-import-resolver-webpack": "0.8.1",
+    "eslint-loader": "1.7.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.3",
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.0",
+    "gulp-header": "1.8.8",
+    "gulp-rename": "1.2.2",
+    "gulp-uglify": "2.0.0",
+    "rollup": "0.31.2",
+    "rollup-plugin-commonjs": "3.0.0",
+    "rollup-plugin-node-resolve": "1.7.0",
+    "uglify-js": "2.7.0",
+    "webpack": "2.7.0",
+    "webpack-dev-server": "2.7.1"
+  }
+}
