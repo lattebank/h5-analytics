@@ -6,12 +6,15 @@
   "main": "dist/analytics.next.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config build/webpack.config.js",
+    "doc": "NODE_ENV=production webpack --config build/webpack.config.dist.js",
     "build": "gulp tracking && gulp adapter && gulp build && gulp build-debug"
   },
   "dependencies": {
-    "@lattebank/analytics.js-core": "3.0.0-1"
+    "@lattebank/analytics.js-core": "3.0.0-1",
+    "extract-text-webpack-plugin": "2.1.0"
   },
   "devDependencies": {
+    "assets-webpack-plugin": "3.5.1",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-loader": "6.4.1",
@@ -36,6 +39,7 @@
     "rollup-plugin-commonjs": "3.0.0",
     "rollup-plugin-node-resolve": "1.7.0",
     "uglify-js": "2.7.0",
+    "vanilla.js": "0.1.6",
     "webpack": "2.7.0",
     "webpack-dev-server": "2.7.1"
   }

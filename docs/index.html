@@ -7,24 +7,50 @@
   <title>h5-analytics</title>
 
   <!-- h5a-tracking -->
-  <script src="/js/analytics-core.js"></script>
+  <script src="/h5-analytics/js/analytics-core.js"></script>
   <script>
   /* h5a-tracking 0.1.0  */
   !function(e,t,n,a,c,s,i){e.H5AnalyticsObject=c,e[c]=e[c]||function(){
   e[c].q.push([].slice.call(arguments))},e[c].q=e[c].q||[],e[c].l=1*new Date,s=t.createElement(n),
   i=t.getElementsByTagName(n)[0],s.async=1,s.src=a,i.parentNode.insertBefore(s,i);
-  }(window,document,"script","/js/analytics.js","h5a");
+  }(window,document,"script","/h5-analytics/js/analytics.js","h5a");
   </script>
+
+  <link rel="stylesheet" href="/h5-analytics/css/bootstrap-xs-e3fc08d519.css" />
 </head>
 <body>
-  <h1>h5-analytics</h1>
+  <div class="container">
+    <h1 class="text-center">h5-analytics</h1>
+    <h4 class="text-center">prefer Chrome mobile view</h4>
+
+    <br />
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2"><button type="button" class="btn btn-default js-click">Click</button></div>
+    </div>
+
+    <br />
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2"><input type="text" class="form-control js-type" placeholder="Type" /></div>
+    </div>
+
+    <br />
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2"><input type="text" class="form-control js-type-secret" placeholder="Type Secret" /></div>
+    </div>
+  </div>
+
   <script>
     h5a('init', 'Google Analytics', {
       trackingId: 'UA-7072136-11',
     });
 
+    h5a('init', 'Latte Bank Interface', {
+      gif: '/img/doc-collect-gif.gif',
+    });
+
     h5a('send', 'page');
   </script>
-  <script src="/static/js/index.js"></script>
+  <!-- <script src="/static/js/index.js"></script> -->
+  <script src="/h5-analytics/dist/index-f522c.js"></script>
 </body>
 </html>

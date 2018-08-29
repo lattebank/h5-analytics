@@ -1,3 +1,21 @@
-h5a('send', 'track', '事件A', { mobile: '13812345678' });
-h5a('send', 'track', '事件B', { email: 'example@example.com' }, { $exclude: 'Google Analytics' });
-h5a('send', 'track', '事件C', { email: 'example@example.com' }, { $exclude: 'GA' });
+import $ready from 'vanilla.js/jquery/ready'; // eslint-disable-line import/no-extraneous-dependencies
+import $find from 'vanilla.js/jquery/find'; // eslint-disable-line import/no-extraneous-dependencies
+import $on from 'vanilla.js/jquery/on'; // eslint-disable-line import/no-extraneous-dependencies
+
+
+$ready(function () { // eslint-disable-line prefer-arrow-callback
+  const $type = $find('.js-type');
+  const $secret = $find('.js-type-secret');
+
+  $on('.js-click', 'click', function () { // eslint-disable-line prefer-arrow-callback
+    h5a('send', 'track', 'CLICK');
+  });
+
+  $on('.js-type', 'input', function () { // eslint-disable-line prefer-arrow-callback
+    h5a('send', 'track', 'TYPE', { value: $type.value });
+  });
+
+  $on('.js-type-secret', 'input', function () { // eslint-disable-line prefer-arrow-callback
+    h5a('send', 'track', 'TYPE_SECRET', { value: $secret.value }, { $exclude: 'GA' });
+  });
+});
