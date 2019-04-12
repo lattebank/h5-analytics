@@ -1,3 +1,4 @@
+/* h5a-adapter 0.4.0  */
 (function () {
   var win = window;
   var doc = document;
@@ -203,3 +204,17 @@
     console.warn('invalid lib.q');
   }
 }(window));
+
+/* h5a-profile example  */
+(function () {
+  var win = window;
+  var doc = document;
+  // TODO: noConflict
+  var analytics = win.analytics;
+
+  var uid = location.search.substring(5) // ?uid=albert
+  if (uid) {
+    analytics.identify(uid);
+  }
+}(window));
+

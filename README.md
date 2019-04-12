@@ -59,6 +59,29 @@ h5a('send', 'track'); // * action required *
 Expert
 ==
 
+Development
+==
+
+```bash
+$ npm run dev
+# open http://127.0.0.1:3001/docs
+```
+
+`js/analytics.js` 中模拟了最终被使用的代码，即依次是
+
+```javascript
+/* analytics.js-core 3.0.0-1 */
+/* h5a-adapter 0.4.0  */
+/* h5a-profile example  */
+```
+
+但在开发中我们是手工修改和同步代码来查看效果的，即开发时实际是
+
+```javascript
+/* h5a-adapter 0.4.0  */
+/* h5a-profile example  */
+```
+
 Flow
 ==
 
