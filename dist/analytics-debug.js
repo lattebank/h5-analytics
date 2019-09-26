@@ -1,4 +1,4 @@
-/* analytics.js-core 3.0.0-1 */
+/* analytics.js-core 3.0.0-2 */
 var analytics = (function () {
     'use strict';
 
@@ -5303,7 +5303,6 @@ var analytics = (function () {
     var extend = require$$2$3;
     var memory = require$$1$6;
     var store = require$$0$11;
-    // var isodateTraverse = require('@segment/isodate-traverse');
 
     /**
      * Expose `Entity`
@@ -5439,16 +5438,17 @@ var analytics = (function () {
 
 
     /**
-     * Get the entity's traits. Always convert ISO date strings into real dates,
-     * since they aren't parsed back from local storage.
+     * Get the entity's traits.
+     * !!! NO ISO DATE as the original analytics.js does. All values shall be string.
+     * !!! NO DEEP CLONE as the orginal analytics.js does. All values shall be shallow;
      *
      * @return {Object}
      */
 
     Entity.prototype._getTraits = function() {
       // var ret = this._options.persist ? store.get(this._options.localStorage.key) : this._traits;
-      // return ret ? isodateTraverse(clone(ret)) : {};
-      return {};
+      var ret = this._traits;
+      return Object.assign({}, ret);
     };
 
 
@@ -5459,11 +5459,11 @@ var analytics = (function () {
      */
 
     Entity.prototype._setTraits = function(traits) {
-      // traits = traits || {};
+      traits = traits || {};
       // if (this._options.persist) {
       //   store.set(this._options.localStorage.key, traits);
       // } else {
-      //   this._traits = traits;
+        this._traits = traits;
       // }
     };
 
