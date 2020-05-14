@@ -1,3 +1,5 @@
+/* analytics.js-core 3.4.1-1 */
+// -> analytics-core.js
 /* h5a-adapter 0.4.0  */
 (function () {
   var win = window;
