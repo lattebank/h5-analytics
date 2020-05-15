@@ -108,6 +108,11 @@
       var action = options.slice(1, options.length);
       if (hitType === 'init') {
         analytics.init(action[0]);
+      } else if (hitType === 'identify') {
+        action = this.padding(action, action.length - 1); // NOTE: only append options
+        // console.log(this.name, JSON.stringify(options));
+        // console.log(this.name, JSON.stringify(action));
+        analytics.identify.apply(null, action);
       } else if (hitType === 'page') {
         action = this.padding(action, 0);
         // console.log(this.name, JSON.stringify(options));
